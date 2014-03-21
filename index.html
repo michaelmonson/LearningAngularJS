@@ -11,21 +11,34 @@
 </head>
 
 <body>
-<!-- 
-	<div id='content' ng-app='MyLearningApp' ng-controller='FirstCtrl'>
-		{{understanding}}
-	</div>
- -->
- 
-	<div id='inputFun' ng-app='MyLearningApp' ng-controller='SecondCtrl'>
-		<span>Enter YourText:</span> 
-		<input type='text' ng-model='inputValue' />
-		<div>
-			<span style="color: green; font-weight: bold;">Duplicate Text:</span>
-			<span style="font-size: larger;"> {{inputValue}} </span>
+ 	<!-- Simple Binding -->
+ 	<div ng-app='MyLearningApp'>
+		
+		<div id='content' ng-controller='MainCtrl'>
+			{{understanding}}
 		</div>
-	</div>	
-	
+
+		<br />
+	  
+	 	<div id='inputFun' ng-controller='MainCtrl'>
+			
+			<span>Enter YourText:</span> 
+			<input type='text' ng-model='inputValue' />
+			
+			<!-- Duplicate Text -->
+			<div>
+				<span style="color: green; font-weight: bold;">Duplicate Text:</span>
+				<span style="font-size: larger;"> {{inputValue}} </span>
+			</div>
+			
+			<!-- Reverse Text -->	
+			<div id='inputReverse'>
+				<span style="color: green; font-weight: bold;">Mirror Reflect:</span>
+			<span style="font-size: larger;"> {{reversedMessage(inputValue)}} </span>
+			
+		</div>	
+		
+	</div>
 </body>
 
 </html>
