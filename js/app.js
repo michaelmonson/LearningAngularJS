@@ -4,6 +4,12 @@
 var myApp = angular.module('MyLearningApp', []);
  
 myApp.factory('Data', function() {
-	return {message: "Test Data from Service"}
+	return {message: "SOS - ABBA - SOS"}
 })
 
+myApp.filter('reverse', function() {
+	return function (text) {
+		return text.split("").reverse().join("");
+	}
+	
+})

@@ -1,0 +1,44 @@
+@CHARSET "ISO-8859-1";
+/* Common Styles for purposes particular to this experiment... */
+
+.italics {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.margin-bottom {
+	margin-bottom: 15px;
+}
+
+.margin-right {
+	margin-right: 75px;
+}
+
+.padLeft {
+	padding-left: 25px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+	margin-left: 50px;
+}
+
+.clear {
+	height: 0;
+	width: 0;
+	clear: both;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.text-gray {
+	color: #666;
+}
