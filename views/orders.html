@@ -1,0 +1,31 @@
+<h3>Invoice of Order Items:</h3>
+
+CustomerID: {{ customerId }}
+<br />
+<!-- 
+<table>
+    <tr>
+        <td>Baseball</td>
+        <td>$9.99</td>
+    </tr>
+    <tr>
+        <td>Bat</td>
+        <td>$19.99</td>
+    </tr>
+</table>
+ -->
+ 
+<table>
+    <tr ng-repeat="details in orderDetails | filter: {{customerId}}">
+        <td class="padRight">{{ details.id }}</td>
+        <td class="padRight">{{ details.name }}</td>
+		<td class="padLeft" ng-repeat="item in details.items">
+			{{ item }}
+		</td>
+        <td class="align-right">{{ details.total | currency }}</td>
+    </tr>
+</table>
+
+<br />
+
+<a href="#/">Customers</a>

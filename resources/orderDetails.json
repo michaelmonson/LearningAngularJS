@@ -1,0 +1,58 @@
+[
+	{
+		"id" : 1, 
+		"name" : "Michael",
+		"items" : ["Baseball", "Glove"],
+		"total" : 15.996
+		
+	} ,                   
+	
+	{
+		"id" : 2, 
+		"name" :"Mike", 
+		"items" : "Soccer Ball",
+		"total" : 10.661
+	} ,
+	
+	{
+		"id" : 3, 
+		"name" : "Alison", 
+		"total" : 7.43
+	} ,
+	
+	{
+		"id" : 4, 
+		"name" : "Josh", 
+		"total" : -4.50234
+	} ,
+	
+	{
+		"id" : 6, 
+		"name" : "Alan", 
+		"total" : 12.334
+	} ,
+	
+	{
+		"id" : 7, 
+		"name" : "John", 
+		"total" : 23.993
+	} ,
+	
+	{
+		"id" : 8, 
+		"name" : "Brian", 
+		"total" : 1.27
+	} ,
+	
+	{
+		"id": 11, 
+		"name" : "Sharky", 
+		"total" : 34.5444
+	},
+	
+	{
+		"id" : 15, 
+		"name":"Todd", 
+		"total": 14.99984238
+	}
+]

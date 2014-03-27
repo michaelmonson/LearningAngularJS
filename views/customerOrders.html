@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="customersApp">
+<head>
+	<title>Angular Demonstration ~ Customers and Orders</title>
+	<link href="../css/animations.css" rel="stylesheet" type="text/css" />
+	<link href="../css/common.css"     rel="stylesheet" type="text/css" />
+</head>
+
+
+<!-- Cool!  Initialize data on the fly!
+   <body ng-init="customers=['Michael', 'Mike', 'Alison', 'Josh', 'Alan', 'John', 'Brian', 'Sharky', 'Todd']"> 
+  -->
+
+<body>
+	<div class="text-italics margin-bottom">
+		<a href="../index.html">Return Home</a>
+	</div>
+	
+	<div class="padLeft border-medium">
+		<h1>Customer Orders</h1>
+		<div ng-view class="slide-animation"></div>
+	</div>
+	
+	<script src="../js/angular-1.3.0_beta2.min.js"></script>
+	<script src="../js/angular-route.js"></script>
+	<script src="../js/angular-animation.js"></script>
+		
+	<script>
+		var app = angular.module('customersApp', ['ngRoute', 'ngAnimate']);
+		
+		app.config(function($routeProvider) {
+			
+			$routeProvider.when('/',
+			{
+				controller: 'CustomersController',
+				templateUrl: 'customers.html'
+			})
+			
+			.when('/orders/:customerId',
+			{
+				controller: 'OrdersController',
+				templateUrl: 'orders.html'
+			})			
+		});
+		
+        
+		//Customer Controller and Data:
+		app.controller('CustomersController', function($scope, customersFactory) {
+		    //$scope is where we place our data
+			$scope.customers = null;
+            
+            function init() {
+                customersFactory.getCustomers().success(function(custs) {
+                    $scope.customers = custs;
+                    alert(custs.data.length);
+                });
+            }
+            
+            init();
+        });
+        
+		
+		//Order Controller and Data:
+        app.controller('OrdersController', function($scope, $routeParams, orderDetailsFactory) {
+            $scope.customerId = $routeParams.customerId;            
+            $scope.orderDetails = null;
+            
+            function init() {
+            	orderDetailsFactory.getOrderDetails().success(function(details) {
+            		$scope.orderDetails = details;
+            		alert(details.data.length);
+            	});
+            }
+            
+            init();
+        });
+		
+        
+		//Customer Factory
+        app.factory('customersFactory', function($http) { 
+            var customerFactory = {};
+            
+            customerFactory.getCustomers = function() {
+                return $http.get('../resources/customers.json');
+            };
+            
+            return customerFactory;
+        });
+		
+		
+      	//Order Details Factory
+        app.factory('orderDetailsFactory', function($http) { 
+            var orderDetailsFactory = {};
+            
+            orderDetailsFactory.getOrderDetails = function() {
+                return $http.get('../resources/orderDetails.json');
+            };
+            
+            return orderDetailsFactory;
+        });
+	
+	</script>
+	
+</body>
+</html>

@@ -21,6 +21,27 @@
 	padding-left: 25px;
 }
 
+.padRight {
+	padding-right: 25px;
+}
+
+.padBoth {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.padTop {
+	padding-top: 15px;
+}
+
+.padBottom {
+	padding-top: 15px;
+}
+
+.align-right {
+	text-align: right;
+}
+
 .float-left {
 	float: left;
 }
@@ -41,4 +62,11 @@
 
 .text-gray {
 	color: #666;
+}
+
+.border-medium {
+	border: solid 2px navy; 
+	width: 640px;
+	margin: 25px;
+	padding: 0 25px 25px 25px;	
 }

@@ -1,0 +1,11 @@
+<div>
+    Search: <input type="text" ng-model="searchText.name">
+    <br />
+    <h3>Customers:</h3>
+    <table>
+        <tr ng-repeat="customer in customers |  filter:searchText | orderBy:'name'">
+            <td class="padRight"><a href="#/orders/{{ customer.id }}">{{ customer.name  }}</a></td>
+            <td class="align-right">{{ customer.total | currency }}</td>
+        </tr>
+    </table>
+</div>
